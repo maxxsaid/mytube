@@ -13,7 +13,7 @@ function App() {
   const [currentVid, setCurrentVid] = useState({});
   // isLoading
   const [isLoading, setIsLoading] = useState(true);
-
+  const Api = process.env.REACT_APP_API_KEY;
   // function to retrieve data from API
   const searchData = (text) => {
     setSearch(text);
@@ -22,9 +22,7 @@ function App() {
         params: {
           q: search,
           maxResults: 15,
-          key: "AIzaSyCbKOaWHInU1RxDAkcmVOqwIYZ-l-3eCh0",
-          // AIzaSyAKIESKm9AzibuHaj_e-wZ9XiRJ1J842us
-          // AIzaSyCbKOaWHInU1RxDAkcmVOqwIYZ-l-3eCh0
+          key: Api,
 
           part: "snippet",
         },
