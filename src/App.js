@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import axios from "axios";
+import Body from "./components/Body";
 
 function App() {
   // search item
   const [search, setSearch] = useState("");
-  // searched data
-  const [data, setData] = useState("");
+  // searched data, videos list
+  const [data, setData] = useState([]);
+  // current video
+  const [currentVid, setCurrentVid] = useState({});
+  // isLoading
+  const [isLoading, setIsLoading] = useState(true);
+
   // function to retrieve data from API
   const searchData = (text) => {
     setSearch(text);
@@ -15,25 +21,56 @@ function App() {
       .get("https://www.googleapis.com/youtube/v3/search", {
         params: {
           q: search,
-          maxResults: 20,
-          key: "AIzaSyAKIESKm9AzibuHaj_e-wZ9XiRJ1J842us",
+          maxResults: 15,
+          key: "AIzaSyCbKOaWHInU1RxDAkcmVOqwIYZ-l-3eCh0",
+          // AIzaSyAKIESKm9AzibuHaj_e-wZ9XiRJ1J842us
+          // AIzaSyCbKOaWHInU1RxDAkcmVOqwIYZ-l-3eCh0
+
           part: "snippet",
         },
       })
       // .then((videos) => console.log(videos))
       .then((videos) => {
-        console.log(videos);
-        setData(videos.data.items);
-        alert("search successfull");
+        // console.log(videos);
+        const videosFiltered = filterVideos(videos.data.items);
+        setData(videosFiltered);
+        setCurrentVid(videosFiltered[0]);
+        // console.log(currentVid);
+        setIsLoading(false);
+        // alert("search successfull");
       })
       .catch((err) => console.log(err));
   };
+  const filterVideos = (videoList) => {
+    const filteredVideos = [];
+
+    videoList.map(function (video) {
+      if (video.id.kind === "youtube#video") {
+        filteredVideos.push(video);
+      }
+      return false;
+    });
+
+    return filteredVideos;
+  };
+
+  const changeCurrentVid = (video) => {
+    setCurrentVid(video);
+  };
+
+  useEffect(() => {
+    searchData("Drake");
+  }, []);
   return (
     <div className="App">
       {/* passing the searchData function as a prop */}
       <Header search={searchData} />
-      <h1>myTube</h1>
-      {/* body */}
+      <Body
+        currentVid={currentVid}
+        isLoading={isLoading}
+        videos={data}
+        changeCurrentVid={changeCurrentVid}
+      />
     </div>
   );
 }
