@@ -12,7 +12,7 @@ function Header(props) {
     <div className="container-fluid border-bottom-1 shadow">
       <div className="col-md-12 pt-1 pb-0">
         <nav className="navbar">
-          <div class="container-fluid">
+          <div className="container-fluid">
             <a className="navbar-brand font-weight-bold text-dark" href="/">
               myTube
             </a>
@@ -25,6 +25,7 @@ function Header(props) {
                   placeholder="Search"
                   className="form-control me-2"
                   value={text}
+                  // input data updates text
                   onChange={(e) => setText(e.target.value)}
                 />
                 <input
