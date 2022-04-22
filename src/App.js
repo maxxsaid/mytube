@@ -17,7 +17,7 @@ function App() {
     "AIzaSyAKIESKm9AzibuHaj_e-wZ9XiRJ1J842us",
     "AIzaSyCbKOaWHInU1RxDAkcmVOqwIYZ-l-3eCh0",
     "AIzaSyBEvweT558_4Rew5gLKP3gsYWgqViuuZ1w",
-    "AIzaSyCTSOdscqiZ7JtbheW10gvOe4XrzopNFqM"
+    "AIzaSyCTSOdscqiZ7JtbheW10gvOe4XrzopNFqM",
   ];
   const randomNum = Math.floor(Math.random() * APIs.length);
   const randomAPI = APIs[randomNum];
@@ -28,7 +28,7 @@ function App() {
       .get("https://www.googleapis.com/youtube/v3/search", {
         params: {
           q: search,
-          maxResults: 15,
+          maxResults: 10,
           key: "AIzaSyCTSOdscqiZ7JtbheW10gvOe4XrzopNFqM",
           part: "snippet",
         },
