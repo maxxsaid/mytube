@@ -1,12 +1,12 @@
 import React from "react";
 
-function VideosCard({ video, changeCurrentVid }) {
+function VideosCard({ video, changeCurrentVideo }) {
   return (
     <div
       key={video.id.videoId}
       className="border col-md-12 d-flex mb-1 p-1"
       style={{ cursor: "Pointer" }}
-      onClick={() => changeCurrentVid(video)}
+      onClick={() => changeCurrentVideo(video)}
     >
       <img
         src={video.snippet.thumbnails.default.url}

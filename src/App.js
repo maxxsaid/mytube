@@ -10,10 +10,15 @@ function App() {
   // searched data, videos list
   const [data, setData] = useState([]);
   // current video
-  const [currentVid, setCurrentVid] = useState({});
+  const [currentVideo, setCurrentVideo] = useState({});
   // isLoading
-  const [isLoading, setIsLoading] = useState(true);
-  const Api = process.env.REACT_APP_API_KEY;
+  const [isLoading, setisLoading] = useState(true);
+  const APIs = [
+    "AIzaSyAKIESKm9AzibuHaj_e-wZ9XiRJ1J842us",
+    "AIzaSyCbKOaWHInU1RxDAkcmVOqwIYZ-l-3eCh0",
+  ];
+  const randomNum = Math.floor(Math.random() * APIs.length);
+  const randomAPI = APIs[randomNum];
   // function to retrieve data from API
   const searchData = (text) => {
     setSearch(text);
@@ -21,9 +26,8 @@ function App() {
       .get("https://www.googleapis.com/youtube/v3/search", {
         params: {
           q: search,
-          maxResults: 15,
-          key: Api,
-
+          maxResults: 10,
+          key: randomAPI,
           part: "snippet",
         },
       })
@@ -32,9 +36,9 @@ function App() {
         // console.log(videos);
         const videosFiltered = filterVideos(videos.data.items);
         setData(videosFiltered);
-        setCurrentVid(videosFiltered[0]);
+        setCurrentVideo(videosFiltered[0]);
         // console.log(currentVid);
-        setIsLoading(false);
+        setisLoading(false);
         // alert("search successfull");
       })
       .catch((err) => console.log(err));
@@ -52,8 +56,8 @@ function App() {
     return filteredVideos;
   };
 
-  const changeCurrentVid = (video) => {
-    setCurrentVid(video);
+  const changeCurrentVideo = (video) => {
+    setCurrentVideo(video);
   };
 
   useEffect(() => {
@@ -64,10 +68,10 @@ function App() {
       {/* passing the searchData function as a prop */}
       <Header search={searchData} />
       <Body
-        currentVid={currentVid}
+        currentVideo={currentVideo}
         isLoading={isLoading}
         videos={data}
-        changeCurrentVid={changeCurrentVid}
+        changeCurrentVideo={changeCurrentVideo}
       />
     </div>
   );
