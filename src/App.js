@@ -16,6 +16,8 @@ function App() {
   const APIs = [
     "AIzaSyAKIESKm9AzibuHaj_e-wZ9XiRJ1J842us",
     "AIzaSyCbKOaWHInU1RxDAkcmVOqwIYZ-l-3eCh0",
+    "AIzaSyBEvweT558_4Rew5gLKP3gsYWgqViuuZ1w",
+    "AIzaSyCTSOdscqiZ7JtbheW10gvOe4XrzopNFqM"
   ];
   const randomNum = Math.floor(Math.random() * APIs.length);
   const randomAPI = APIs[randomNum];
@@ -26,8 +28,8 @@ function App() {
       .get("https://www.googleapis.com/youtube/v3/search", {
         params: {
           q: search,
-          maxResults: 10,
-          key: randomAPI,
+          maxResults: 15,
+          key: "AIzaSyCTSOdscqiZ7JtbheW10gvOe4XrzopNFqM",
           part: "snippet",
         },
       })
@@ -37,7 +39,7 @@ function App() {
         const videosFiltered = filterVideos(videos.data.items);
         setData(videosFiltered);
         setCurrentVideo(videosFiltered[0]);
-        // console.log(currentVid);
+        // console.log(currentVideo);
         setisLoading(false);
         // alert("search successfull");
       })
@@ -62,6 +64,7 @@ function App() {
 
   useEffect(() => {
     searchData("Drake");
+    //eslint-disable-next-line
   }, []);
   return (
     <div className="App">

@@ -1,11 +1,14 @@
 import React from "react";
 
 function ShowVideo({ currentVideo, isLoading }) {
-  // console.log(currentVideo);
+  console.log(currentVideo);
   return (
-    <div className="col-md-7" style={{ height: "600px", marginTop: "20px" }}>
+    <div
+      className="col-md-7 mb-1 p-3 glassSide"
+      style={{ height: "600px", marginTop: "20px" }}
+    >
       {isLoading ? (
-        "Video is Loading"
+        <p className="text">Search a video...</p>
       ) : (
         <>
           <iframe
@@ -16,14 +19,13 @@ function ShowVideo({ currentVideo, isLoading }) {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
             title={currentVideo.id.videoId}
           />
-          <h5>{currentVideo.snippet.title}</h5>
-          <p className="text-right">
-            <b>Channel ID : {currentVideo.snippet.channelId} </b>
-          </p>
-          <p className="text-center">
+          <h5 className="text h3">{currentVideo.snippet.title}</h5>
+          <p className="text-left text h6">
             <b>Channel Name : {currentVideo.snippet.channelTitle} </b>
           </p>
-          <p className="text-center">{currentVideo.snippet.description}</p>
+          <p className="text-left text h6">
+            {currentVideo.snippet.description}
+          </p>
         </>
       )}
     </div>

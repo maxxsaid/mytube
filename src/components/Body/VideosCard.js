@@ -4,7 +4,7 @@ function VideosCard({ video, changeCurrentVideo }) {
   return (
     <div
       key={video.id.videoId}
-      className="border col-md-12 d-flex mb-1 p-1"
+      className="glassSide border col-md-12 d-flex mb-1 p-2"
       style={{ cursor: "Pointer" }}
       onClick={() => changeCurrentVideo(video)}
     >
@@ -17,11 +17,11 @@ function VideosCard({ video, changeCurrentVideo }) {
       />
       <div style={{ width: "68%" }}>
         <b>
-          <p style={{ fontSize: "0.99rem !important" }}>
+          <p className="text h5">
             {video.snippet.title}
           </p>
         </b>
-        <p className="text-right">{video.snippet.channelTitle}</p>
+        <p className="text-right text h6">{video.snippet.channelTitle}</p>
       </div>
     </div>
   );
