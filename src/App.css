@@ -29,9 +29,9 @@ body {
 .btn-grad {
   background-image: linear-gradient(
     to right,
-    #e52d27 0%,
-    #b31217 51%,
-    #e52d27 100%
+    #7474bf 0%,
+    #348ac7 51%,
+    #7474bf 100%
   );
 }
 .btn-grad {
@@ -43,7 +43,7 @@ body {
   background-size: 200% auto;
   color: white;
   box-shadow: 0 0 20px #eee;
-  border-radius: 5px;
+  border-radius: 10px;
   display: block;
 }
 
@@ -52,6 +52,7 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
 .videos {
   width: 60%;
   margin: auto;
