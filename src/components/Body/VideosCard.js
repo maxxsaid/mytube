@@ -17,9 +17,7 @@ function VideosCard({ video, changeCurrentVideo }) {
       />
       <div style={{ width: "68%" }}>
         <b>
-          <p className="text h5">
-            {video.snippet.title}
-          </p>
+          <p className="text h5">{video.snippet.title}</p>
         </b>
         <p className="text-right text h6">{video.snippet.channelTitle}</p>
       </div>

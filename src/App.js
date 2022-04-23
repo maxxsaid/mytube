@@ -18,21 +18,19 @@ function App() {
     "AIzaSyCbKOaWHInU1RxDAkcmVOqwIYZ-l-3eCh0",
     "AIzaSyBEvweT558_4Rew5gLKP3gsYWgqViuuZ1w",
     "AIzaSyCTSOdscqiZ7JtbheW10gvOe4XrzopNFqM",
+    "AIzaSyDK1vnWO7tWwYYVPun0Z-a1ctTOMHrNMnQ",
+    "AIzaSyBgp4QomsXScsUG2jfYeaa3FQyXBeUnQFo",
   ];
   const randomNum = Math.floor(Math.random() * APIs.length);
   const randomAPI = APIs[randomNum];
+  const Apikey = "AIzaSyBgp4QomsXScsUG2jfYeaa3FQyXBeUnQFo";
   // function to retrieve data from API
   const searchData = (text) => {
     setSearch(text);
     axios
-      .get("https://www.googleapis.com/youtube/v3/search", {
-        params: {
-          q: search,
-          maxResults: 10,
-          key: "AIzaSyCTSOdscqiZ7JtbheW10gvOe4XrzopNFqM",
-          part: "snippet",
-        },
-      })
+      .get(
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${search}&type=video&key=${Apikey}`
+      )
       // .then((videos) => console.log(videos))
       .then((videos) => {
         // console.log(videos);
