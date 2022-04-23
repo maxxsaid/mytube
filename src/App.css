@@ -105,6 +105,11 @@ body {
     padding-left: 30px;
   }
 }
+@media only screen and (max-width: 428px) {
+  .title {
+    padding-left: 60px;
+  }
+}
 @media only screen and (max-width: 395px) {
   .title {
     padding-left: 50px;
