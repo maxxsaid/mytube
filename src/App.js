@@ -20,10 +20,11 @@ function App() {
     "AIzaSyCTSOdscqiZ7JtbheW10gvOe4XrzopNFqM",
     "AIzaSyDK1vnWO7tWwYYVPun0Z-a1ctTOMHrNMnQ",
     "AIzaSyBgp4QomsXScsUG2jfYeaa3FQyXBeUnQFo",
+    "AIzaSyA1tFiQyAKSIfBXbw786EwbzAaEFALR8UI",
   ];
   const randomNum = Math.floor(Math.random() * APIs.length);
   const randomAPI = APIs[randomNum];
-  const Apikey = "AIzaSyBgp4QomsXScsUG2jfYeaa3FQyXBeUnQFo";
+  const Apikey = "AIzaSyA1tFiQyAKSIfBXbw786EwbzAaEFALR8UI";
   // function to retrieve data from API
   const searchData = (text) => {
     setSearch(text);

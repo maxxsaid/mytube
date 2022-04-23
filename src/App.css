@@ -86,8 +86,11 @@ body {
 @media only screen and (max-width: 630px) {
   .container-sm {
     margin: auto;
-    width: 50%;
+    width: 60%;
     padding: 10px;
+  }
+  .title {
+    padding-left: 50px;
   }
 }
 @media only screen and (max-width: 760px) {
@@ -97,5 +100,8 @@ body {
     margin: auto;
     width: 80%;
     padding: 10px;
+  }
+  .title {
+    padding-left: 30px;
   }
 }
