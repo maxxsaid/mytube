@@ -29,7 +29,7 @@ function App() {
     setSearch(text);
     axios
       .get(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${search}&type=video&key=${Apikey}`
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${search}&type=video&key=${Apikey}`
       )
       // .then((videos) => console.log(videos))
       .then((videos) => {

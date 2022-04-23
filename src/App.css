@@ -3,11 +3,12 @@ body {
   background-image: linear-gradient(90deg, #fff6d8 0%, #f0ebff 100%);
 }
 .glassSide {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .title {
   font-family: "Indie Flower", cursive;
@@ -18,11 +19,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.title span{
-  font-family: 'Rock Salt', cursive;
+.title span {
+  font-family: "Rock Salt", cursive;
 }
-.text{
-  font-family: 'Plus Jakarta Sans', sans-serif;
+.text {
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .btn-grad {
@@ -50,4 +51,49 @@ body {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+.videos {
+  width: 60%;
+  margin: auto;
+  padding-top: 20px;
+}
+.video {
+  width: 55%;
+  height: auto;
+  margin: auto;
+}
+.thumb {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .videos {
+    width: 100%;
+    margin: auto;
+    padding-top: 20px;
+  }
+  .video {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+  .thumb {
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .container-sm {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 760px) {
+}
+@media only screen and (max-width: 440px) {
+  .container-sm {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+  }
 }

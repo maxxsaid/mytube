@@ -9,7 +9,7 @@ const Body = ({ currentVideo, isLoading, videos, changeCurrentVideo }) => {
         {/**current video component */}
         <ShowVideo currentVideo={currentVideo} isLoading={isLoading} />
         {/** videos list component */}
-        <div className="col-md-5" style={{ marginTop: "20px" }}>
+        <div className="videos">
           {isLoading ? (
             <p className="text">Waiting for the videos...</p>
           ) : (

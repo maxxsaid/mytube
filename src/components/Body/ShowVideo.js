@@ -4,8 +4,8 @@ function ShowVideo({ currentVideo, isLoading }) {
   console.log(currentVideo);
   return (
     <div
-      className="col-md-7 mb-1 p-3 glassSide"
-      style={{ height: "600px", marginTop: "20px" }}
+      className="video p-2 glassSide"
+      style={{ height: "700px", marginTop: "30px" }}
     >
       {isLoading ? (
         <p className="text">Search a video...</p>
@@ -19,9 +19,11 @@ function ShowVideo({ currentVideo, isLoading }) {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
             title={currentVideo.id.videoId}
           />
-          <h5 className="text h3">{currentVideo.snippet.title}</h5>
-          <p className="text-left text h6">
-            <b>Channel Name : {currentVideo.snippet.channelTitle} </b>
+          <h5 className="text h4">
+            <b>{currentVideo.snippet.title}</b>
+          </h5>
+          <p className="text-left text h5">
+            Channel Name : {currentVideo.snippet.channelTitle}
           </p>
           <p className="text-left text h6">
             {currentVideo.snippet.description}

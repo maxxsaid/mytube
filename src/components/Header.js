@@ -10,13 +10,13 @@ function Header(props) {
   };
   return (
     <div className="container-fluid border-bottom-1 shadow">
-      <div className="col-md-9 pt-2 pb-2">
+      <div className="pt-2 pb-2">
         <nav className="navbar">
-          <div className="container-fluid">
+          <div className="container-sm">
             <a className="title" href="/">
               my<span>Tube</span>
             </a>
-            <form className="col-md-7" onSubmit={(e) => handleSubmit(e)}>
+            <form className="search" onSubmit={(e) => handleSubmit(e)}>
               <div className="form-group d-flex">
                 <input
                   type="text"
@@ -31,7 +31,7 @@ function Header(props) {
                 <input
                   type="submit"
                   value="Search"
-                  className="btn btn-grad  col-md-2 ml-1"
+                  className="btn btn-grad ml-1"
                 />
               </div>
             </form>
