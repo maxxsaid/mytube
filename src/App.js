@@ -24,7 +24,7 @@ function App() {
   ];
   const randomNum = Math.floor(Math.random() * APIs.length);
   const randomAPI = APIs[randomNum];
-  const Apikey = "AIzaSyA1tFiQyAKSIfBXbw786EwbzAaEFALR8UI";
+  const Apikey = randomAPI;
   // function to retrieve data from API
   const searchData = (text) => {
     setSearch(text);
